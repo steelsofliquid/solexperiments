@@ -1,0 +1,25 @@
+TextWindow.Title = "Text Editor"
+
+' Initialize the text string variable
+text = ""
+
+While "True"
+    ' Display the current text in the text window
+    TextWindow.Clear()
+    TextWindow.Write(text)
+
+    ' Get user input
+    userInput = TextWindow.Read()
+
+    ' Handle user input
+    If userInput = "exit" Then
+        ' Exit the program
+        EndWhile
+    ElseIf userInput = "clear" Then
+        ' Clear the text
+        text = ""
+    Else
+        ' Add the user input to the text
+        text = text + userInput
+    EndIf
+EndWhile
